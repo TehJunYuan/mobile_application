@@ -4,32 +4,54 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: AppBar(
-          title: const Center(child: Text('Ask Me Anything')),
-          backgroundColor: Colors.blueAccent[100],
-          centerTitle: true,
-        ),
-        body: BallPage(),
-      ),
-    ),
+    const MyApp(),
   );
 }
 
-class BallPage extends StatefulWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
-  State<BallPage> createState() => _BallPageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const BallPage(),
+    );
+  }
+}
+
+class BallPage extends StatelessWidget {
+  const BallPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text('Ask Me Anything')),
+        backgroundColor: Colors.blueAccent[300],
+        centerTitle: true,
+      ),
+      body: Ball(),
+    );
+  }
+}
+
+class Ball extends StatefulWidget {
+  @override
+  State<Ball> createState() => _BallState();
 }
 
 int ballImage = 1;
 
-class _BallPageState extends State<BallPage> {
+class _BallState extends State<Ball> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[900],
       body: Container(
           padding: EdgeInsets.all(20),
           child: Center(
@@ -38,7 +60,6 @@ class _BallPageState extends State<BallPage> {
                   setState(() {
                     ballNumber();
                   });
-
                   print(ballImage);
                 },
                 child: Image.asset('images/ball$ballImage.png')),
