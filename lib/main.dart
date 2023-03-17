@@ -60,7 +60,7 @@ class _BallState extends State<Ball> {
                   setState(() {
                     ballNumber();
                   });
-                  print(ballImage);
+                  print('The ball number is: $ballImage');
                 },
                 child: Image.asset('images/ball$ballImage.png')),
           )),
