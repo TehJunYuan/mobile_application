@@ -1,6 +1,6 @@
-# tutorial
+# quizziz
 
-A new Flutter project.
+This is a simple quiz app
 
 ## Getting Started
 
