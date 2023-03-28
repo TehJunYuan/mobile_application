@@ -4,7 +4,7 @@ import 'quiz_brain.dart';
 QuizBrain quizbrain = QuizBrain();
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
@@ -57,7 +57,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Center(
             child: Text(
               quizbrain.getQuestion(),
-              style: TextStyle(color: Colors.white70, fontSize: 20),
+              style: const TextStyle(color: Colors.white70, fontSize: 20),
               textAlign: TextAlign.center,
             ),
           ),
@@ -74,8 +74,8 @@ class _QuizPageState extends State<QuizPage> {
                   foregroundColor: MaterialStateProperty.resolveWith(
                       (states) => Colors.white),
                   shape: MaterialStateProperty.resolveWith(
-                      (states) => BeveledRectangleBorder())),
-              child: Text('True'),
+                      (states) => const BeveledRectangleBorder())),
+              child: const Text('True'),
               onPressed: () {
                 // if user clicked the true button and the answer is also true
                 if(quizbrain.getAnswer()) {
@@ -85,11 +85,11 @@ class _QuizPageState extends State<QuizPage> {
                 setState(() {
                   // if user answer is correct
                   if(isCorrect) {
-                    scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+                    scoreKeeper.add(const Icon(Icons.check, color: Colors.green,));
                   }
                   // if user answer is incorrect
                   else {
-                    scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
+                    scoreKeeper.add(const Icon(Icons.close, color: Colors.red,));
                   }
 
                   // reset the isCorrect value
@@ -121,8 +121,8 @@ class _QuizPageState extends State<QuizPage> {
                   foregroundColor: MaterialStateProperty.resolveWith(
                       (states) => Colors.white),
                   shape: MaterialStateProperty.resolveWith(
-                      (states) => BeveledRectangleBorder())),
-              child: Text('False'),
+                      (states) => const BeveledRectangleBorder())),
+              child: const Text('False'),
               onPressed: () {
                 if(quizbrain.getAnswer() == false) {
                   isCorrect = true;
@@ -130,11 +130,11 @@ class _QuizPageState extends State<QuizPage> {
                 setState(() {
                   // if user answer is correct
                   if(isCorrect) {
-                    scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+                    scoreKeeper.add(const Icon(Icons.check, color: Colors.green,));
                   }
                   // if user answer is incorrect
                   else {
-                    scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
+                    scoreKeeper.add(const Icon(Icons.close, color: Colors.red,));
                   }
 
                   // reset the isCorrect value
