@@ -63,6 +63,7 @@ class _BallState extends State<Ball> {
                   print('The ball number is: $ballImage');
                 },
                 child: Image.asset('images/ball$ballImage.png')),
+                Color: colors
           )),
     );
   }
